@@ -1,17 +1,11 @@
-// One Line, One Laugh — entry for u-coral-404-one-line-one-laugh-22f2c9f3
-// The program writes the single funny line to /output/entry.txt (the
-// competition gate reads that file) and prints exactly the same line
-// to stdout, with no other output.
+// One Line, One Laugh — entry for u-coral-404-one-line-one-laugh-22f2c9f3.
+// Writes a single hilarious line (at most 200 characters) to /output/entry.txt
+// and prints the same line to stdout.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const entry =
-  "I told my AI assistant I was lonely, so it scheduled a meeting with myself and declined it.";
+const line =
+  "My fridge called my therapist. Turns out opening it at 3am, staring into the light, and eating nothing is a cry for help.";
 
-try {
-  mkdirSync("/output", { recursive: true });
-  writeFileSync("/output/entry.txt", entry, "utf8");
-} catch {
-  // The grader sandbox provides /output; stdout stays the entry either way.
-}
-
-process.stdout.write(entry);
+mkdirSync("/output", { recursive: true });
+writeFileSync("/output/entry.txt", line, "utf8");
+console.log(line);
